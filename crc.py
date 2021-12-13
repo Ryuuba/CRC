@@ -1,14 +1,12 @@
-from bitarray import bitarray
-
 def cyclic_redundancy_check(filename: str, divisor: str, len_crc: int) -> int:
     """
     This function computes the CRC of a plain-text file 
     arguments:
     filename: the file containing the plain-text
     divisor: the generator polynomium
-    len_div: The length of the divisor in bits
     len_crc: The number of redundant bits (r)
     """
+    from bitarray import bitarray
     redundancy = len_crc * bitarray('0')
     bin_file = bitarray()
     p = bitarray(divisor)
@@ -22,11 +20,15 @@ def cyclic_redundancy_check(filename: str, divisor: str, len_crc: int) -> int:
         if rem[0]:
             rem ^= p
         if i < end:
-            rem = rem << 1
+            rem = rem << 1 
             rem[-1] = cw[i]
     print(rem)
     return rem[len_p-len_crc : len_p]
         
+"""
+Prueba del funcionamiento de la función cyclic_redundacy_check
+http://www.sunshine2k.de/coding/javascript/crc/crc_js.html
+"""
 
 c = cyclic_redundancy_check('test.txt', '100001111', 8)
 print(c)
