@@ -22,7 +22,6 @@ def cyclic_redundancy_check(filename: str, divisor: str, len_crc: int) -> int:
         if i < end:
             rem = rem << 1 
             rem[-1] = cw[i]
-    print(rem)
     return rem[len_p-len_crc : len_p]
         
 """
