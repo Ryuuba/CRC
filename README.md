@@ -28,5 +28,5 @@ La tercera propiedad se puede validar modificando el tamaño de la ráfaga a sei
 
 
 ```PowerShell
-python.exe .\crc_test.py .\test.txt 10011 4 5 383723 1000
+python.exe .\crc_test.py .\test.txt 10011 4 6 383723 1000
 ```
