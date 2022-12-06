@@ -22,7 +22,7 @@ def burst_error(msg: bitarray, n: int, seed: int) -> bitarray:
 
 def mod2_div(dividend: bitarray, divisor: bitarray) -> bitarray:
     """
-    This function performs mod-2 divison (without carry)
+    This function performs mod-2 division (without carry)
     Arguments:
     dividend: a bitarray holding the dividend
     divisor: a bitarray holding the divisor
@@ -45,7 +45,7 @@ def compute(filename: str, divisor: bitarray, len_crc: int) -> tuple[bitarray, b
     This function computes the CRC of a plain-text file 
     arguments:
     filename: the file containing the plain-text
-    divisor: the generator polynomium
+    divisor: the generator polynomial
     len_crc: The number of redundant bits (r)
     """
     redundancy = len_crc * bitarray('0')
@@ -55,6 +55,7 @@ def compute(filename: str, divisor: bitarray, len_crc: int) -> tuple[bitarray, b
         bin_file.fromfile(file)
     cw = bin_file + redundancy
     rem = mod2_div(cw, divisor)
+    print(rem[len_p-len_crc : len_p])
     return bin_file, rem[len_p-len_crc : len_p]
         
 """
