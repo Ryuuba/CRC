@@ -1,4 +1,4 @@
-import crc
+import crc_custom as crc
 import sys
 from bitarray import bitarray
 import matplotlib.pyplot as plt
