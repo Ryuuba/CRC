@@ -13,7 +13,7 @@ donde L es la longitud de la ráfaga y r es el número de bits que integran el c
 ## Dependencias
 
 ```PowerShell
-pip3 install bitarray
+pip3 install bitarray matplotlib
 ```
 
 ## Pruebas
