@@ -10,14 +10,17 @@ def main():
     burst_size = int(sys.argv[3])
     seed = int(sys.argv[4])
     iter_max = int(sys.argv[5])
+
     # Redundancy
     crc_len = len(divisor)-1
     zero_rem = bitarray(crc_len)
     zero_rem.setall(0)
     counter = 0 # actual number of repetitions
+
     # Computes CRC
     msg, crc_code = crc.compute(filename, divisor, crc_len)
     print(f'crc of text {filename} equals {crc_code}')
+    
     # Evaluation of the CRC robustness
     probability = []
     for i in range(0, iter_max):

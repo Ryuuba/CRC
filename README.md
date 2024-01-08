@@ -21,7 +21,7 @@ pip3 install bitarray matplotlib
 Para probar la primera propiedad, basta con ejecutar el script crc_test de la siguiente manera:
 
 ```PowerShell
-python.exe .\main.py .\test.txt 10011 4 4 1000
+python.exe .\main.py .\test.txt 10011 4 0 1000
 ```
 
 El argumento `test.txt` contiene el texto al que se le calculará el CRC, 10011 es el polinomio generador, el primer 4 corresponde a la longitud del código CRC, mientras que el segundo 4 corresponde al tamaño de la ráfaga de errores. El siguiente entero corresponde a la semilla que se utilizará para inicializar el estado del generador de número pseudoaleatorios. El último entero indica el número de veces que el experimento se va a repetir.
@@ -29,12 +29,12 @@ El argumento `test.txt` contiene el texto al que se le calculará el CRC, 10011 
 Si se desea comprobar la segunda propiedad, se puede emplear la siguiente configuración, en la que solo se varia el tamaño de la ráfaga a cinco.
 
 ```PowerShell
-python.exe .\main.py .\test.txt 10011 4 5 1000
+python.exe .\main.py .\test.txt 10011 5 0 1000
 ```
 
 La tercera propiedad se puede validar modificando el tamaño de la ráfaga a seis.
 
 
 ```PowerShell
-python.exe .\main.py .\test.txt 10011 4 6 1000
+python.exe .\main.py .\test.txt 10011 6 0 1000
 ```
